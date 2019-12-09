@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="profile" href="http://microformats.org/profile/specs" />
+    <link rel="profile" href="http://microformats.org/profile/hatom" />
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
+    <title th:text="${title}">title</title>
+    <link rel='stylesheet' id='tinyframework-style-css' href='/css/style.css' type='text/css' media='all' />
+<body>
+<div id="page" class="site">
+    <header id="masthead" class="site-header" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+
+
+        <div class="site-branding" itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+
+            <a href="index.html" class="custom-logo-link site-logo-link" rel="home" itemprop="url"><img width="80" height="45" src="picture/IEICE_LOGOsmall-e1500364235422.jpg" class="custom-logo attachment-full size-full" alt="IEICE Shanghai Section Website"  /></a>
+            <div id="site-title-wrapper">
+                <p/>
+                <p id="site-title" class="site-title"><a href="index.html" rel="home">IEICE Shanghai Section Website</a></p>
+            </div><!-- #site-title-wrapper -->
+        </div><!-- .site-branding -->
+
+
+        <nav id="site-navigation" class="main-navigation" aria-label="Primary Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+
+            <h2 class="screen-reader-text">Primary Menu</h2>
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+
+            <!--<button class="go-to-top"><a href="#page"><span class="icon-webfont fa-chevron-circle-up" aria-hidden="true"></span></a></button>-->
+
+            <div class="menu-ieice-container"><ul id="primary-menu" class="nav-menu">
+                <li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-4 menu-item-274" th:classappend="${homeMenuSelect}?current-menu-item:null"><a href="index">Home</a></li>
+                <li id="menu-item-271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-271" th:classappend="${aboutMenuSelect}?current-menu-item:null"><a href="aboutUs">About Us</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-272" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-272" th:classappend="${organizationSelect}?current_page_item:null"><a href="organization">Organization</a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-259 "th:classappend="${activateMenuSelect}?current-menu-item:null"><a href="activate">Activities</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-263" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-263"th:classappend="${allSelect}?current_page_item:null"><a href="Meetings">IEICE All Sections Meetings</a></li>
+                        <li id="menu-item-265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-265"th:classappend="${pubSelect}?current_page_item:null"><a href="Publications">Publications</a></li>
+                        <li id="menu-item-266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-266"th:classappend="${cSelect}?current_page_item:null"><a href="Conferences">IEICE Global Conferences</a></li>
+                        <li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"th:classappend="${gSelect}?current_page_item:null"><a href="gallery">Gallery</a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-275"th:classappend="${newUpdataMenuSelect}?current-menu-item:null"><a href="newUpdata">New Updates</a></li>
+                <li id="menu-item-268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-268"th:classappend="${mMenuSelect}?current-menu-item:null"><a href="Membership">Membership</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"th:classappend="${mdSelect}?current_page_item:null"><a href="MembershipDues">Membership Dues</a></li>
+                        <li id="menu-item-270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270"th:classappend="${bSelect}?current_page_item:null"><a href="bMembership">Benefits of Membership</a></li>
+                    </ul>
+                </li>
+            </ul></div>
+        </nav><!-- #site-navigation -->
+
+        <!-- Custom Header - Start -->
+
+
+
+
+
+        <!-- Custom Header - End -->
+
+
+    </header><!-- .site-header -->
+    <div id="content" class="site-content">
+
+        <div th:include="aricale :: ${ariid}"/>
+
+
+
+
+
+        <aside id="secondary" class="sidebar widget-area" aria-labelledby="sidebar-header" itemscope="itemscope" itemtype="https://schema.org/WPSideBar">
+
+            <h2 class="screen-reader-text" id="sidebar-header">Main Sidebar</h2>
+
+
+            <section id="search-2" class="widget widget_search"><form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" role="search" method="get" class="search-form" action="https://ieicemalaysia.org/">
+                <label>
+                    <span class="screen-reader-text">Search for:</span>
+                    <input type="search" itemprop="query-input" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                </label>
+                <input type="submit" class="search-submit" value="Search" />
+                <meta itemprop="target" content="https://ieicemalaysia.org/?s={search} "/></form></section>
+            <section id="recent-posts-2" class="widget widget_recent_entries widget_text">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+            <li>
+                <a href="Newpublications">New publications</a>
+            </li>
+        </ul>
+        </section><section id="text-6" class="widget widget_text"><h3 class="widget-title">More Information</h3>			<div class="textwidget"><ul>
+            <li><a href="http://www.ieice.org" target="_blank" rel="noopener">IEICE Main Webpage</a></li>
+            <li><a href="http://www.ieice.org/eng/for_authors/index.html" target="_blank" rel="noopener">Information for Authors</a></li>
+            <li><a href="https://cert.ieice.org/opensso/cdcservlet?goto=https%3A%2F%2Fcmweb1.ieice.org%3A443%2Fmember%2Fen%2Fk%2Findex.html%26locale%3Den&#038;RequestID=1432288727&#038;MajorVersion=1&#038;MinorVersion=0&#038;ProviderID=https%3A%2F%2Fcert.ieice.org%3A443%2Famagent&#038;IssueInstant=2017-07-19T15%3A44%3A45Z" target="_blank" rel="noopener">Members Area</a></li>
+            <li><a href="http://www.ieice.org/eng/event/index.html" target="_blank" rel="noopener">Events (Main Webpage)</a></li>
+        </ul>
+        </div>
+        </ul>
+
+        </form>
+
+        </section>
+
+        </aside><!-- #secondary -->
+
+
+    </div><!-- #content .site-content -->
+
+
+</div><!-- #page .site -->
+</body>
+</html>
