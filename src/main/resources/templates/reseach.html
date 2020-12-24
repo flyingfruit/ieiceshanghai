@@ -7,7 +7,7 @@
     <link rel="profile" href="http://microformats.org/profile/specs" />
     <link rel="profile" href="http://microformats.org/profile/hatom" />
     <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
-    <title th:text="${title}">title</title>
+    <title >search</title>
     <link rel='stylesheet' id='tinyframework-style-css' href='/css/style.css' type='text/css' media='all' />
 <body>
 <div id="page" class="site">
@@ -46,10 +46,10 @@
                         <li id="menu-item-267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-267"th:classappend="${gSelect}?current_page_item:null"><a href="gallery">Gallery</a></li>
                     </ul>
                 </li>
-                <li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-25 menu-item-275"th:classappend="${newUpdataMenuSelect}?current-menu-item:null"><a href="newUpdata">New Updates</a>
-                <ul class="sub-menu">
-                    <li id="menu-item-273" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"th:classappend="null"><a href="https://www.ieice.org/eng_r/read_now/index.html">Now is the time to read the paper</a></li>
-                </ul>
+                <li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-275"th:classappend="${newUpdataMenuSelect}?current-menu-item:null"><a href="newUpdata">New Updates</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-273" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"th:classappend="null"><a href="https://www.ieice.org/eng_r/read_now/index.html">Now is the time to read the paper</a></li>
+                    </ul>
                 </li>
                 <li id="menu-item-268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-268"th:classappend="${mMenuSelect}?current-menu-item:null"><a href="Membership">Membership</a>
                     <ul class="sub-menu">
@@ -72,13 +72,120 @@
 
     </header><!-- .site-header -->
     <div id="content" class="site-content">
-
-        <div th:include="aricale :: ${ariid}"/>
-
+        <section id="primary" class="content-area">
 
 
+            <main id="main" class="site-main" itemscope="itemscope" itemprop="mainContentOfPage">
 
 
+
+                <header class="page-header">
+
+                    <h1 class="page-title" itemprop="headline" >Search Results for: <td th:text="${search}"></td></h1>
+
+                </header><!-- .page-header -->
+                <tr th:each="art:${articlelist}">
+                    <article id="${art.id}" class="post-213 page type-page status-publish h-entry hentry h-as-page" itemscope="" itemtype="https://schema.org/Article">
+                        <header class="entry-header">
+                            <h2 class="entry-title" itemprop="headline">
+                                <a th:href="@{${art.href}}" rel="bookmark" itemprop="url"><td th:text="${art.title}"></td></a>
+                            </h2>
+                            <div class="entry-meta">
+                            </div><!-- .entry-meta -->
+                        </header><!-- .entry-header -->
+                        <div th:if="${not art.overLength}" class="entry-summary" itemprop="description alternativeHeadline">
+                            <p th:text="${art.page}">啊啊啊></p>
+                        </div>
+                        <div th:if="${art.overLength}" class="entry-summary" itemprop="description alternativeHeadline">
+                            <p th:text="${art.page}">啊啊啊></p>
+                            <p><a th:href="@{${art.href}}" class="more-link">continue reading</a><td th:text="${art.title}"></td></p></p>
+                        </div><!-- .entry-summary -->
+
+                        <footer class="entry-meta">
+                        </footer><!-- .entry-meta -->
+
+
+                    </article>
+                </tr>
+                <!--<article id="post-213" class="post-213 page type-page status-publish h-entry hentry h-as-page" itemscope="" itemtype="https://schema.org/Article">-->
+
+
+
+                    <!--<header class="entry-header">-->
+
+
+
+                        <!--<h2 class="entry-title" itemprop="headline">-->
+
+                            <!--<a href="https://ieicemalaysia.org/?page_id=213" rel="bookmark" itemprop="url">Visits</a>-->
+
+                        <!--</h2>-->
+
+
+
+                        <!--<div class="entry-meta">-->
+
+
+                        <!--</div>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+
+
+                    <!--</header>&lt;!&ndash; .entry-header &ndash;&gt;-->
+
+
+                    <!--<div class="entry-summary" itemprop="description alternativeHeadline">-->
+                        <!--<p></p>-->
+                    <!--</div>&lt;!&ndash; .entry-summary &ndash;&gt;-->
+
+
+                    <!--<footer class="entry-meta">-->
+                    <!--</footer>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+
+
+                <!--</article>-->
+                <!--<article id="post-214" class="post-213 page type-page status-publish h-entry hentry h-as-page" itemscope="" itemtype="https://schema.org/Article">-->
+
+
+
+                    <!--<header class="entry-header">-->
+
+
+
+                        <!--<h2 class="entry-title" itemprop="headline">-->
+
+                            <!--<a href="https://ieicemalaysia.org/?page_id=213" rel="bookmark" itemprop="url">Visits</a>-->
+
+                        <!--</h2>-->
+
+
+
+                        <!--<div class="entry-meta">-->
+
+
+                        <!--</div>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+
+
+                    <!--</header>&lt;!&ndash; .entry-header &ndash;&gt;-->
+
+
+                    <!--<div class="entry-summary" itemprop="description alternativeHeadline">-->
+                        <!--<p>Visit to the University of Electro-Communications (UEC, Japan), March 2015 Visit to the Fuel Cell Institute of UKM (Universiti Kebangsaan Malaysia), December 2015</p>-->
+                    <!--</div>&lt;!&ndash; .entry-summary &ndash;&gt;-->
+
+
+                    <!--<footer class="entry-meta">-->
+
+
+
+                    <!--</footer>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+
+
+                <!--</article>-->
+
+
+            </main><!-- .site-main -->
+
+
+        </section><!-- #primary -->
         <aside id="secondary" class="sidebar widget-area" aria-labelledby="sidebar-header" itemscope="itemscope" itemtype="https://schema.org/WPSideBar">
 
             <h2 class="screen-reader-text" id="sidebar-header">Main Sidebar</h2>
@@ -92,41 +199,34 @@
                 <input type="submit" class="search-submit" value="Search" />
                 <meta itemprop="target" content="https://ieicemalaysia.org/?s={search} "/></form></section>
             <section id="recent-posts-2" class="widget widget_recent_entries widget_text">		<h3 class="widget-title">Recent Posts</h3>		<ul>
-
-            <li>
-                <a href="https://www.ieice.org/eng_r/read_now/index.html">Now is the time to read the paper！</a>
-            </li>
+                <li>
+                    <a href="https://www.ieice.org/eng_r/read_now/index.html">Now is the time to read the paper！</a>
+                </li>
                 <li>
                     <a href="https://www.ieice.org/eng/message_from_ieice/history_and_statistics/history_and_statistics.pdf">Annual Statistics about IEICE Membership</a>
                 </li>
-            <li>
-                <a href="Newpublications">New publications</a>
-            </li>
-        </ul>
-        </section><section id="text-6" class="widget widget_text"><h3 class="widget-title">More Information</h3>			<div class="textwidget"><ul>
+                <li>
+                    <a href="Newpublications">New publications</a>
+                </li>
+            </ul>
+            </section><section id="text-6" class="widget widget_text"><h3 class="widget-title">More Information</h3>			<div class="textwidget"><ul>
             <li><a href="http://www.ieice.org" target="_blank" rel="noopener">IEICE Main Webpage</a></li>
             <li><a href="http://www.ieice.org/eng/for_authors/index.html" target="_blank" rel="noopener">Information for Authors</a></li>
             <li><a href="https://cert.ieice.org/opensso/cdcservlet?goto=https%3A%2F%2Fcmweb1.ieice.org%3A443%2Fmember%2Fen%2Fk%2Findex.html%26locale%3Den&#038;RequestID=1432288727&#038;MajorVersion=1&#038;MinorVersion=0&#038;ProviderID=https%3A%2F%2Fcert.ieice.org%3A443%2Famagent&#038;IssueInstant=2017-07-19T15%3A44%3A45Z" target="_blank" rel="noopener">Members Area</a></li>
             <li><a href="http://www.ieice.org/eng/event/index.html" target="_blank" rel="noopener">Events (Main Webpage)</a></li>
         </ul>
         </div>
-        </ul>
+            </ul>
 
-        </form>
+            </form>
 
         </section>
 
         </aside><!-- #secondary -->
 
-
-    </div><!-- #content .site-content -->
-    <div th:if="${buttom}=='buttom'">
-        <footer id="colophon" class="site-footer" aria-labelledby="footer-header" itemscope="itemscope" itemtype="https://schema.org/WPFooter"></footer>
-        <div class="site-info" type="font-size:20px">
-            ICP主体备案号: <a href="http://beian.miit.gov.cn/" rel="nofollow">沪ICP备20002132号-1</a> </span>
-        </div>
     </div>
 </div><!-- #page .site -->
+
 
 </body>
 </html>
